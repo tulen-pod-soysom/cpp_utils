@@ -1,0 +1,4 @@
+/.cache
+/.clang-tidy
+/.vscode
+/cpputils.cppcheck

@@ -1,0 +1,6 @@
+# ninja log v6
+2	724	1742210342378869530	CMakeFiles/test.dir/test6.cpp.o	21e745d9f9f261b
+1	873	1746984605351850483	CMakeFiles/test.dir/test8.cpp.o	636048def91858bd
+873	957	1746984606221859454	test	4ae2128f0fa3c65e
+1	474	1745417313418268961	CMakeFiles/test.dir/test7.cpp.o	be3c899a82d2526a
+1	714	1745650971273163960	CMakeFiles/test.dir/test9.cpp.o	b0ecdf3e01a6ad5c

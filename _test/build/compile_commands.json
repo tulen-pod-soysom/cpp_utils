@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/aleksey/workspace/cpp_utils/_test/build",
+  "command": "/usr/bin/clang++ -I/home/aleksey/workspace/cpp_utils -g -o CMakeFiles/test.dir/test8.cpp.o -c /home/aleksey/workspace/cpp_utils/_test/test8.cpp",
+  "file": "/home/aleksey/workspace/cpp_utils/_test/test8.cpp",
+  "output": "CMakeFiles/test.dir/test8.cpp.o"
+}
+]
