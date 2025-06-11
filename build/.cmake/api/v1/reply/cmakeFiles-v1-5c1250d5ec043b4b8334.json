@@ -216,7 +216,7 @@
 	"paths" : 
 	{
 		"build" : "/home/aleksey/workspace/cpp_utils/build",
-		"source" : "/home/aleksey/workspace/cpp_utils/_test"
+		"source" : "/home/aleksey/workspace/cpp_utils/tests"
 	},
 	"version" : 
 	{

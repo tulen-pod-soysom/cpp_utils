@@ -42,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-O2 -g -DNDEBUG"
 				}
 			],
 			"includes" : 
@@ -65,7 +65,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-O2 -g -DNDEBUG",
 				"role" : "flags"
 			}
 		],
@@ -93,7 +93,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test10.cpp",
+			"path" : "test13.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

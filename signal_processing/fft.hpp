@@ -7,7 +7,8 @@
 #include <vector>
 
 template <typename InputIt, typename OutputIt>
-void fft(InputIt begin, InputIt end, OutputIt out, double is) {
+void fft(InputIt begin, InputIt end, OutputIt out, bool direct = 1) {
+    double is = direct? -1 : 1;
     int size = end - begin;
     if (size & size - 1)
         throw "size is not a power of two";
@@ -64,19 +65,36 @@ void fft(InputIt begin, InputIt end, OutputIt out, double is) {
 
 
 template<typename ContainerIn, typename ContainerOut = ContainerIn>
-ContainerOut fft(ContainerIn a, double iz)
+ContainerOut fft(ContainerIn a)
 {
     ContainerOut c (std::size(a));
-    fft(std::begin(a),std::end(a),std::begin(c),iz);
+    fft(std::begin(a),std::end(a),std::begin(c),true);
     return c;
 }
 
 
 template<typename T>
-std::vector<std::complex<T>> fft(std::vector<T> a, double iz)
+std::vector<std::complex<T>> fft(std::vector<T> a)
 {
     std::vector<std::complex<T>> c (std::size(a));
-    fft(std::begin(a),std::end(a),std::begin(c),iz);
+    fft(std::begin(a),std::end(a),std::begin(c),true);
+    return c;
+}
+
+template<typename ContainerIn, typename ContainerOut = ContainerIn>
+ContainerOut ifft(ContainerIn a)
+{
+    ContainerOut c (std::size(a));
+    fft(std::begin(a),std::end(a),std::begin(c),true);
+    return c;
+}
+
+
+template<typename T>
+std::vector<std::complex<T>> ifft(std::vector<T> a)
+{
+    std::vector<std::complex<T>> c (std::size(a));
+    fft(std::begin(a),std::end(a),std::begin(c),false);
     return c;
 }
 

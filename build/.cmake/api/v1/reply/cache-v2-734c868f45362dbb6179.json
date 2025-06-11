@@ -43,7 +43,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "Debug"
+			"value" : "RelWithDebInfo"
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/aleksey/workspace/cpp_utils/_test"
+			"value" : "/home/aleksey/workspace/cpp_utils/tests"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1262,42 +1262,6 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "_CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
-		},
-		{
-			"name" : "_CMAKE_C_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
-		},
-		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
-		},
-		{
 			"name" : "test_BINARY_DIR",
 			"properties" : 
 			[
@@ -1331,7 +1295,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/aleksey/workspace/cpp_utils/_test"
+			"value" : "/home/aleksey/workspace/cpp_utils/tests"
 		}
 	],
 	"kind" : "cache",

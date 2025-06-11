@@ -1,8 +1,8 @@
 [
 {
   "directory": "/home/aleksey/workspace/cpp_utils/build",
-  "command": "/usr/bin/clang++ -I/home/aleksey/workspace/cpp_utils -g -o CMakeFiles/test.dir/test10.cpp.o -c /home/aleksey/workspace/cpp_utils/_test/test10.cpp",
-  "file": "/home/aleksey/workspace/cpp_utils/_test/test10.cpp",
-  "output": "CMakeFiles/test.dir/test10.cpp.o"
+  "command": "/usr/bin/clang++ -I/home/aleksey/workspace/cpp_utils -O2 -g -DNDEBUG -o CMakeFiles/test.dir/test13.cpp.o -c /home/aleksey/workspace/cpp_utils/tests/test13.cpp",
+  "file": "/home/aleksey/workspace/cpp_utils/tests/test13.cpp",
+  "output": "CMakeFiles/test.dir/test13.cpp.o"
 }
 ]

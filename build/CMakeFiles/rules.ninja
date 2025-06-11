@@ -7,14 +7,14 @@
 
 # =============================================================================
 # Project: test
-# Configurations: Debug
+# Configurations: RelWithDebInfo
 # =============================================================================
 # =============================================================================
 
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__test_unscanned_Debug
+rule CXX_COMPILER__test_unscanned_RelWithDebInfo
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}/usr/bin/clang++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -24,7 +24,7 @@ rule CXX_COMPILER__test_unscanned_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__test_Debug
+rule CXX_EXECUTABLE_LINKER__test_RelWithDebInfo
   depfile = $DEP_FILE
   deps = gcc
   command = $PRE_LINK && /usr/bin/clang++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
@@ -44,7 +44,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/aleksey/workspace/cpp_utils/_test -B/home/aleksey/workspace/cpp_utils/build
+  command = /usr/bin/cmake --regenerate-during-build -S/home/aleksey/workspace/cpp_utils/tests -B/home/aleksey/workspace/cpp_utils/build
   description = Re-running CMake...
   generator = 1
 

@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-RelWithDebInfo-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5.0"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "RelWithDebInfo",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test-Debug-5ed37a670cb0b7d5bd79.json",
+					"jsonFile" : "target-test-RelWithDebInfo-46f84ba0c64604195f32.json",
 					"name" : "test",
 					"projectIndex" : 0
 				}
@@ -50,7 +50,7 @@
 	"paths" : 
 	{
 		"build" : "/home/aleksey/workspace/cpp_utils/build",
-		"source" : "/home/aleksey/workspace/cpp_utils/_test"
+		"source" : "/home/aleksey/workspace/cpp_utils/tests"
 	},
 	"version" : 
 	{

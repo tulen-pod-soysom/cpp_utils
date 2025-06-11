@@ -26,14 +26,34 @@ struct gnuplot_program
         // fprintf(pipe.get(), "pause mouse close\n");
     }
 
+
+    template <typename InputIt>
+    void plot_points(InputIt begin_x, InputIt end_x, InputIt begin_y, InputIt end_y)
+    {
+        fprintf(pipe.get(), "%s", script.c_str());
+
+        auto it_y = begin_y;
+        for (auto it_x = begin_x; it_x != end_x; ++it_x, ++it_y)
+        {
+            fprintf(pipe.get(), "%f %f\n",*it_x, *it_y);
+            // printf( "%f %f\n",*it_x, *it_y);
+        }
+        fprintf(pipe.get(), "e\n");
+        // fprintf(pipe.get(), "pause mouse close\n");
+    }
+
     void replot() 
     {
         fprintf(pipe.get(), "replot\n");
     }
 
-    ~gnuplot_program()
+    void stop()
     {
         fclose(pipe.get());
-        pipe.reset();
+        pipe.release();
+    }
+
+    ~gnuplot_program()
+    {
     }
 };
