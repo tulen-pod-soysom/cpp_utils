@@ -116,6 +116,8 @@ std::complex<double> fourier(InputIt begin, InputIt end, double frequency, doubl
 }
 
 
+
+
 /*
 template<typename T>
 std::vector<T> abs(std::vector<T> v)

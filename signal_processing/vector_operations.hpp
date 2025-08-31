@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iterator>
 #include <vector>
+#include <complex>
 namespace vec_ops {
 
 

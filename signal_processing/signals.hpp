@@ -42,9 +42,18 @@ namespace signals
         Container c(n);
         sampler s;
         s.set_sample_rate(sample_rate);
-        s(std::begin(c),std::end(c),[&](auto x) {auto v = fmod(f*x + phase/ 2.0/M_PI,1); return v > 0.5? a*(1 - 4*(v-0.5)) : 4*a*(v-0.25); });
+        s(std::begin(c),std::end(c),[&](auto x) {auto v = fmod(f*x + phase/ 2.0/M_PI + 1.0/4.0,1); return v > 0.5? a*(1 - 4*(v-0.5)) : 4*a*(v-0.25); });
         return c;
     }
+
+    template <typename Container = std::vector<double>>
+    Container generate_impulse(int n, int offset = 0, double a = 1)
+    {
+        Container c(n);
+        *(std::begin(c) + offset) = a;
+        return c;
+    }
+    
 
 
     template <typename Container = std::vector<double>>

@@ -1,7 +1,9 @@
 #ifndef UTILS_H
 #define UTILS_H
 #include <chrono>
+#include <initializer_list>
 #include <iostream>
+#include <map>
 #include <ostream>
 #include <type_traits>
 #include <vector>
@@ -17,6 +19,14 @@ auto print(T a, std::string prefix = "", std::ostream &str = std::cout)
     str << std::endl;
 }
 
+template <typename T,typename T_>
+auto print(std::pair<T,T_> a, std::string prefix = "", std::string separator = " ", std::ostream &str = std::cout) 
+{
+    str << prefix;
+    str << a.first << separator << a.second;
+    str << std::endl;
+}
+
 template <typename InputIt>
 auto print(InputIt begin, InputIt end, std::string prefix = "", std::string separator = " ", std::ostream &str = std::cout) {
     str << prefix;
@@ -26,10 +36,23 @@ auto print(InputIt begin, InputIt end, std::string prefix = "", std::string sepa
 }
 
 template <typename T>
-auto print(std::vector<T> v, std::string prefix = "",std::string separator = " ",  std::ostream &str = std::cout) {
+auto print(std::vector<T>& v, std::string prefix = "",std::string separator = " ",  std::ostream &str = std::cout) {
     print(std::begin(v),std::end(v),prefix,separator,str);
 }
 
+template <typename T>
+auto print(std::initializer_list<T> v, std::string prefix = "",std::string separator = " ",  std::ostream &str = std::cout) {
+    print(std::begin(v),std::end(v),prefix,separator,str);
+}
+
+
+template <typename T,typename T_>
+auto print(std::map<T,T_>& v, std::string prefix = "",std::string separator = " ",  std::ostream &str = std::cout) {
+    str << prefix;
+	for (auto& it : v)
+		str << it.first << separator << it.second << std::endl;
+//    str << std::endl;
+}
 
 
 template <typename Function, typename Time_Step = std::chrono::milliseconds>

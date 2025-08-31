@@ -1,7 +1,8 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/aleksey/workspace/cpp_utils/build/cmake_install.cmake"
+		"/home/aleksey/workspace/cpp_utils/build/cmake_install.cmake",
+		"/home/aleksey/workspace/cpp_utils/build/tests/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

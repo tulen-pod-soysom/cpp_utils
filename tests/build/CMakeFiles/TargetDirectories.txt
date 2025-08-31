@@ -1,3 +1,0 @@
-/home/aleksey/workspace/cpp_utils/_test/build/CMakeFiles/test.dir
-/home/aleksey/workspace/cpp_utils/_test/build/CMakeFiles/edit_cache.dir
-/home/aleksey/workspace/cpp_utils/_test/build/CMakeFiles/rebuild_cache.dir

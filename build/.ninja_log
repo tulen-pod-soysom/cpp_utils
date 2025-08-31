@@ -1,7 +1,6 @@
 # ninja log v6
-2	843	1749652505578648887	CMakeFiles/test.dir/test13.cpp.o	28408dd915bc5f43
-2	33	1749652549662515224	build.ninja	afce6c6e2fca1ead
-2	33	1749652549662515224	/home/aleksey/workspace/cpp_utils/build/cmake_install.cmake	afce6c6e2fca1ead
-843	924	1749652506418659090	test	742b7ba6d1f02d75
-1	1167	1749652553422560476	CMakeFiles/test.dir/test13.cpp.o	3a65cd0e87466c18
-1167	1241	1749652554585907805	test	944172d7890e823d
+1	30	1754148111016269656	build.ninja	65bd2e755c4b0837
+1	30	1754148111016269656	/home/aleksey/workspace/cpp_utils/build/cmake_install.cmake	65bd2e755c4b0837
+1	30	1754148111016269656	/home/aleksey/workspace/cpp_utils/build/tests/cmake_install.cmake	65bd2e755c4b0837
+2	765	1751576126036137741	tests/CMakeFiles/test.dir/test15.cpp.o	1e828045c61ecd23
+765	826	1751576126799476074	tests/test	f7b88fdd49dc7513

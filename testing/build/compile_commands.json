@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/aleksey/workspace/utils/testing/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/test.dir/test.cpp.o -c /home/aleksey/workspace/utils/testing/test.cpp",
-  "file": "/home/aleksey/workspace/utils/testing/test.cpp",
-  "output": "CMakeFiles/test.dir/test.cpp.o"
-}
-]
