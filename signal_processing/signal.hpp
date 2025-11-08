@@ -1,7 +1,7 @@
 #ifndef SIGNAL_HPP
 #define SIGNAL_HPP
 
-#include "../math/constants.hpp"
+#include "cpp_utils/math/constants.hpp"
 #include <cmath>
 
 namespace signal_processing 

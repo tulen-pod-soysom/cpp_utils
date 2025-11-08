@@ -1,4 +1,6 @@
 /.cache
 /.clang-tidy
 /.vscode
+/.directory
 /cpputils.cppcheck
+/build

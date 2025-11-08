@@ -7,17 +7,34 @@
 #include <ostream>
 #include <type_traits>
 #include <vector>
+#include <concepts>
+#include <utility>
 
 namespace utils
 {
 
-template <typename T>
+// template <typename Container>
+// concept is_container = requires(T t)
+// {
+//     std::begin(t);
+//     std::end(t);
+// };
+
+template <typename T> 
+// requires(!is_container<T>)
 auto print(T a, std::string prefix = "", std::ostream &str = std::cout) 
 {
     str << prefix;
-    str << a;
+    str << a;    
     str << std::endl;
 }
+
+// template <typename Container>
+// auto print(Container c, std::string prefix = "", std::string separator = " ", std::ostream &str = std::cout)
+// {
+//     print(std::begin(c), std::end(c),prefix,separator,str);
+// }
+
 
 template <typename T,typename T_>
 auto print(std::pair<T,T_> a, std::string prefix = "", std::string separator = " ", std::ostream &str = std::cout) 
@@ -36,7 +53,7 @@ auto print(InputIt begin, InputIt end, std::string prefix = "", std::string sepa
 }
 
 template <typename T>
-auto print(std::vector<T>& v, std::string prefix = "",std::string separator = " ",  std::ostream &str = std::cout) {
+auto print(const std::vector<T>& v, std::string prefix = "",std::string separator = " ",  std::ostream &str = std::cout) {
     print(std::begin(v),std::end(v),prefix,separator,str);
 }
 
@@ -47,7 +64,7 @@ auto print(std::initializer_list<T> v, std::string prefix = "",std::string separ
 
 
 template <typename T,typename T_>
-auto print(std::map<T,T_>& v, std::string prefix = "",std::string separator = " ",  std::ostream &str = std::cout) {
+auto print(const std::map<T,T_>& v, std::string prefix = "",std::string separator = " ",  std::ostream &str = std::cout) {
     str << prefix;
 	for (auto& it : v)
 		str << it.first << separator << it.second << std::endl;

@@ -64,6 +64,8 @@ void fft(InputIt begin, InputIt end, OutputIt out, bool direct = 1) {
 };
 
 
+
+
 template<typename ContainerIn, typename ContainerOut = ContainerIn>
 ContainerOut fft(ContainerIn a)
 {
@@ -71,7 +73,6 @@ ContainerOut fft(ContainerIn a)
     fft(std::begin(a),std::end(a),std::begin(c),true);
     return c;
 }
-
 
 template<typename T>
 std::vector<std::complex<T>> fft(std::vector<T> a)
@@ -84,19 +85,24 @@ std::vector<std::complex<T>> fft(std::vector<T> a)
 template<typename ContainerIn, typename ContainerOut = ContainerIn>
 ContainerOut ifft(ContainerIn a)
 {
-    ContainerOut c (std::size(a));
-    fft(std::begin(a),std::end(a),std::begin(c),true);
-    return c;
+    // ContainerIn c (std::size(a));
+    fft(std::begin(a),std::end(a),std::begin(a),false);
+
+    ContainerOut out(std::size(a));
+    std::transform(std::begin(a),std::end(a),std::begin(out),
+    [](auto v) {return v.real();}
+);
+    return out;
 }
 
 
-template<typename T>
-std::vector<std::complex<T>> ifft(std::vector<T> a)
-{
-    std::vector<std::complex<T>> c (std::size(a));
-    fft(std::begin(a),std::end(a),std::begin(c),false);
-    return c;
-}
+// template<typename T>
+// std::vector<std::complex<T>> ifft(std::vector<T> a)
+// {
+//     std::vector<std::complex<T>> c (std::size(a));
+//     fft(std::begin(a),std::end(a),std::begin(c),false);
+//     return c;
+// }
 
 
 

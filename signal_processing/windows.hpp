@@ -63,6 +63,27 @@ namespace signal_processing
             Hamming(std::begin(c),std::end(c));
             return c;
         }
+
+        template<typename OutputIt>
+        void Gauss(OutputIt begin, OutputIt end, double sigma = 0.4)
+        {
+            auto s = std::distance(begin,end);
+
+            for (auto i = 0; i < s; ++i)
+            {
+               auto v = (i-s/2.0)/(sigma * s / 2.0);
+                *(begin + i) = std::exp(-0.5*v*v);
+            }
+        }
+
+        template <typename ContainerOut = std::vector<double>>
+        ContainerOut Gauss(size_t n, double sigma = 0.4)
+        {
+            ContainerOut c(n);
+            Gauss(std::begin(c),std::end(c), sigma);
+            return c;
+        }
+
     }
 
 

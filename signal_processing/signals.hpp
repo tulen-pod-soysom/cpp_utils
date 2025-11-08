@@ -1,9 +1,12 @@
-#include "../math/sampling.hpp"
+#pragma once
+#include "cpp_utils/math/sampling.hpp"
 #include <algorithm>
 #include <cmath>
 #include <random>
+#include <type_traits>
+#include <complex>
 
-namespace signals
+namespace sgnls
 {
     template <typename Container = std::vector<double>>
     Container generate_sine(double sample_rate, int n, double a = 1, double f = 1, double phase = 0)
@@ -56,18 +59,49 @@ namespace signals
     
 
 
-    template <typename Container = std::vector<double>>
-    Container generate_white_noise(int n, double sigma = 1.0)
+    template <typename Type = double, typename Container = std::vector<Type>>
+    Container generate_awgn(int n, double sigma = 1.0)
     {
         Container c(n);
 
         std::random_device rd;
+        std::mt19937 mt(rd());
 
-        std::normal_distribution<double> dist(0,sigma);
 
-        std::generate(std::begin(c),std::end(c),[&]{return dist(rd);});
+        if constexpr (std::is_same_v<Type, std::complex<double>>)
+        {
+            std::normal_distribution<double> dist(0,sigma/sqrt(2));
+            std::generate(std::begin(c),std::end(c),[&]{return std::complex<double>(dist(mt),dist(mt));});
+        }
+        else
+        {
+            std::normal_distribution<double> dist(0,sigma);
+            std::generate(std::begin(c),std::end(c),[&]{return dist(mt);});
+        }
 
         return c;
     }
+
+
+
+    template <typename InputIt, typename Random>
+    void generate_random_bits(Random& rd, InputIt begin, InputIt end, double zero_chance = 0.5, double one_chance = 0.5)
+    {
+        std::discrete_distribution<> dist({zero_chance,one_chance});
+
+        for (auto it = begin; it != end; ++it)
+        {
+            *it = dist(rd);
+        }
+    }
+
+    template <typename Container = std::vector<bool>, typename Random>
+    Container generate_random_bits(Random &rd, int n, double zero_chance = 0.5, double one_chance = 0.5)
+    {
+        Container c(n);
+        generate_random_bits(rd,std::begin(c),std::end(c),zero_chance,one_chance);
+        return c;
+    }
+
 
 }

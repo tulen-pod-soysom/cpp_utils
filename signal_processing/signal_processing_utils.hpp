@@ -1,11 +1,11 @@
 #ifndef SIGNAL_PROCESSING_UTILS_HPP
 #define SIGNAL_PROCESSING_UTILS_HPP
 
-#include "math/sampling.hpp"
-#include "signal_processing/fft.hpp"
-#include "signal_processing/vector_operations.hpp"
-#include "signal_processing/windows.hpp"
-#include "graphics/gnuplot_helper.hpp"
+#include "cpp_utils/math/sampling.hpp"
+#include "cpp_utils/signal_processing/fft.hpp"
+#include "cpp_utils/signal_processing/vector_operations.hpp"
+#include "cpp_utils/signal_processing/windows.hpp"
+#include "cpp_utils/graphics/gnuplot_helper.hpp"
 #include <string>
 #include <utility>
 #include <vector>
